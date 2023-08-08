@@ -12,7 +12,7 @@ baseurlCode=" https://api.github.com/search/code?q="
 wordlist=['openai','chatgpt','chatgpt3','chatgpttoken','GPT-3','gpt-4','gpt-35','openai-api','openaiapi','chatgpt api']
 customHeaders={
     'Accept': 'application/json',
-    'Authorization': 'Bearer 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', # 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 Token expiration is intended :) 
+    'Authorization': 'Bearer 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', # Token expiration is intended :) 
     'X-GitHub-Api-Version': '2022-11-28'
 }
 
@@ -51,7 +51,6 @@ def getSizeOfRepo(url):
     for i in reversed(tname):
         name+=i
     r = requests.get("https://api.github.com/repos/"+name)
-    print("DEBUG:  ", r)                                             ## DEBUG
     s=r.json()["size"]
     if s is not None:
         return s
